@@ -8,6 +8,7 @@ function App() {
           height: "100vh",
           justifyContent: "center",
           alignItems: "center",
+          backgroundImage: "linear-gradient(to bottom, #404040, gray)",
         }}
       >
         <h1 style={{ color: "lightgray" }}>MEU BLOG SOBRE BATERIA</h1>
