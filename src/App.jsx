@@ -49,7 +49,7 @@ const ContainerGeral = styled.div`
   padding-top: 25px;
   /* background-image: linear-gradient(to bottom, #404040, gray); */
   /* background-image: linear-gradient(to bottom, #000066, darkblue, #0000b3); */
-  background-image: linear-gradient(to bottom, #000066, #0000b3);
+  background-image: linear-gradient(to bottom, #000066, #000099);
 
   @media screen and (max-width: 750px) {
     /* display: flex;
