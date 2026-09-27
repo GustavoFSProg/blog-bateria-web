@@ -11,6 +11,10 @@ const ContainerAll = styled.div`
   color: lightgray;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 750px) {
+    height: 157px;
+  }
 `;
 
 const ContainerLinks = styled.div`
@@ -26,6 +30,11 @@ const ContainerLinks = styled.div`
   justify-content: space-between;
   font-weight: bold;
   font-size: 18px;
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    margin-top: -57px;
+  }
 `;
 
 function Header() {
@@ -47,6 +56,7 @@ function Header() {
               textDecoration: "none",
               color: "lightgray",
               cursor: "pointer",
+              marginTop: "6px",
             }}
           >
             POSTS
@@ -56,6 +66,7 @@ function Header() {
               textDecoration: "none",
               color: "lightgray",
               cursor: "pointer",
+              marginTop: "6px",
             }}
           >
             ADMIN
@@ -65,6 +76,7 @@ function Header() {
               textDecoration: "none",
               color: "lightgray",
               cursor: "pointer",
+              marginTop: "6px",
             }}
           >
             LOGIN
@@ -73,6 +85,7 @@ function Header() {
             style={{
               textDecoration: "none",
               color: "lightgray",
+              marginTop: "6px",
 
               cursor: "pointer",
             }}
