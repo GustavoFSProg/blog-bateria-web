@@ -102,7 +102,12 @@ function App() {
             {posts.map((items) => {
               return (
                 <Card>
-                  <img src={items.image} width="250" height="200" />
+                  <img
+                    src={items.image}
+                    style={{ borderRadius: "15px" }}
+                    width="250"
+                    height="200"
+                  />
                   <h2 style={{ fontSize: "27px", color: "#c3c6c7" }}>
                     {items.title}
                   </h2>
