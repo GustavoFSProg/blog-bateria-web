@@ -6,7 +6,7 @@ const ContainerAll = styled.div`
   width: 100%;
   height: 65px;
   /* background: darkblue; */
-  background: #000080;
+  background: #0000cc;
 
   color: lightgray;
   align-items: center;
