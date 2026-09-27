@@ -63,7 +63,7 @@ const BodyContainer = styled.div`
   align-items: center;
   justify-content: center;
   // background: "green",
-  margin-left: 110px;
+  margin-left: 45px;
 
   @media screen and (max-width: 750px) {
     margin-left: 10px;
