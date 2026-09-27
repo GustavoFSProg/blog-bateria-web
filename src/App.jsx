@@ -47,7 +47,9 @@ const ContainerGeral = styled.div`
   flex-direction: column;
   padding-bottom: 200px;
   padding-top: 25px;
-  background-image: linear-gradient(to bottom, #404040, gray);
+  /* background-image: linear-gradient(to bottom, #404040, gray); */
+  /* background-image: linear-gradient(to bottom, #000066, darkblue, #0000b3); */
+  background-image: linear-gradient(to bottom, #000066, #0000b3);
 
   @media screen and (max-width: 750px) {
     /* display: flex;
@@ -111,7 +113,14 @@ function App() {
                   <h2 style={{ fontSize: "27px", color: "#c3c6c7" }}>
                     {items.title}
                   </h2>
-                  <p style={{ width: "80%", color: "#e1e4e6" }}>
+                  <p
+                    style={{
+                      width: "80%",
+                      color: "#e1e4e6",
+                      textIndent: "15px",
+                      textAlign: "justify",
+                    }}
+                  >
                     {items.description}
                   </p>
 
