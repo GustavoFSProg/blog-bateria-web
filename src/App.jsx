@@ -17,9 +17,10 @@ const Card = styled.div`
   @media screen and (max-width: 750px) {
     display: flex;
     /* flex-direction: column; */
-    width: 80%;
+    width: 100%;
     height: auto;
-    /* padding-top: 33px; */
+    padding-top: 33px;
+    padding-bottom: 33px;
   }
 `;
 
@@ -34,6 +35,38 @@ const ContainerCards = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+`;
+
+const ContainerGeral = styled.div`
+  display: flex;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 200px;
+  padding-top: 25px;
+  background-image: linear-gradient(to bottom, #404040, gray);
+
+  @media screen and (max-width: 750px) {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+  }
+`;
+
+const BodyContainer = styled.div`
+  display: flex;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+  // background: "green",
+  margin-left: 110px;
+
+  @media screen and (max-width: 750px) {
+    margin-left: 10px;
   }
 `;
 
@@ -62,30 +95,9 @@ function App() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          width: "100vw",
-          height: "auto",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          paddingBottom: "200px",
-          paddingTop: "25px",
-          backgroundImage: "linear-gradient(to bottom, #404040, gray)",
-        }}
-      >
+      <ContainerGeral>
         <h1 style={{ color: "lightgray" }}>BLOG SOBRE BATERIA</h1>
-        <div
-          style={{
-            display: "flex",
-            width: "85%",
-            alignItems: "center",
-            justifyContent: "center",
-            // background: "green",
-            marginLeft: "110px",
-          }}
-        >
+        <BodyContainer>
           <ContainerCards>
             {posts.map((items) => {
               return (
@@ -97,8 +109,8 @@ function App() {
               );
             })}
           </ContainerCards>
-        </div>
-      </div>
+        </BodyContainer>
+      </ContainerGeral>
     </>
   );
 }
