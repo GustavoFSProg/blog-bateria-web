@@ -6,7 +6,7 @@ const Card = styled.div`
   display: flex;
   width: 90%;
   height: 550px;
-  background: lightblue;
+  background: #235b75;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -103,8 +103,16 @@ function App() {
               return (
                 <Card>
                   <img src={items.image} width="250" height="200" />
-                  <h2 style={{ fontSize: "27px" }}>{items.title}</h2>
-                  <p style={{ width: "80%" }}> {items.description}</p>
+                  <h2 style={{ fontSize: "27px", color: "#c3c6c7" }}>
+                    {items.title}
+                  </h2>
+                  <p style={{ width: "80%", color: "#e1e4e6" }}>
+                    {items.description}
+                  </p>
+
+                  {/* <p style={{ width: "80%", color: "#e6e7e8" }}>
+                    {items.description}
+                  </p> */}
                 </Card>
               );
             })}
