@@ -6,7 +6,10 @@ const Card = styled.div`
   display: flex;
   width: 90%;
   height: 550px;
-  background: #235b75;
+  /* background: #235b75; */
+  background: #1d4c62;
+  /* background: #173d4f; */
+
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -49,7 +52,8 @@ const ContainerGeral = styled.div`
   padding-top: 25px;
   /* background-image: linear-gradient(to bottom, #404040, gray); */
   /* background-image: linear-gradient(to bottom, #000066, darkblue, #0000b3); */
-  background-image: linear-gradient(to bottom, #000066, #000099);
+  background-image: linear-gradient(to bottom, #00004d, #000080);
+  /* background-image: linear-gradient(to bottom, #000033, #000080); */
 
   @media screen and (max-width: 750px) {
     /* display: flex;
@@ -117,7 +121,7 @@ function App() {
                     style={{
                       width: "80%",
                       color: "#e1e4e6",
-                      textIndent: "15px",
+                      textIndent: "18px",
                       textAlign: "justify",
                     }}
                   >
