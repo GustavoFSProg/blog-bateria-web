@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import api from "./api";
+import Header from "./Components/Header";
 
 const Card = styled.div`
   display: flex;
@@ -101,6 +102,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <ContainerGeral>
         <h1 style={{ color: "lightgray" }}>BLOG SOBRE BATERIA</h1>
         <BodyContainer>
