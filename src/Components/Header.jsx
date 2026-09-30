@@ -48,6 +48,7 @@ function Header() {
               color: "lightgray",
               cursor: "pointer",
             }}
+            to="/"
           >
             HOME
           </Link>

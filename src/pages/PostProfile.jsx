@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import api from "./api";
-import Header from "./Components/Header";
-import { Link, useNavigate } from "react-router-dom";
+import Header from "../Components/Header";
+import api from "../api";
 
 const Card = styled.div`
   display: flex;
-  width: 90%;
+  width: 50%;
   height: 550px;
   /* background: #235b75; */
   background: #1d4c62;
@@ -17,7 +16,8 @@ const Card = styled.div`
   flex-direction: column;
   margin-top: 20px;
   border-radius: 15px;
-  padding-top: 10px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 
   @media screen and (max-width: 750px) {
     display: flex;
@@ -30,10 +30,10 @@ const Card = styled.div`
 `;
 
 const ContainerCards = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 
   @media screen and (max-width: 750px) {
     display: flex;
@@ -71,27 +71,27 @@ const BodyContainer = styled.div`
   align-items: center;
   justify-content: center;
   // background: "green",
-  margin-left: 45px;
+  /* margin-left: 45px; */
 
   @media screen and (max-width: 750px) {
     margin-left: 10px;
   }
 `;
 
-function App() {
-  const [posts, setPosts] = useState([]);
+function PostProfile() {
+  const [post, setPost] = useState({});
 
-  const navigate = useNavigate();
+  const id = localStorage.getItem("ID");
 
-  async function GetPosts() {
+  async function GetOnePost() {
     try {
-      const { data } = await api.get("/get-posts");
+      const { data } = await api.get(`/get-one-post/${id}`);
 
       if (!data) {
         return alert("Erro, posts não encontrados!!");
       }
 
-      setPosts(data);
+      setPost(data);
 
       return data;
     } catch (error) {
@@ -99,14 +99,8 @@ function App() {
     }
   }
 
-  function goToProfile(id) {
-    localStorage.setItem("ID", id);
-
-    navigate("/profile");
-  }
-
   useEffect(() => {
-    GetPosts();
+    GetOnePost();
   }, []);
 
   return (
@@ -116,40 +110,62 @@ function App() {
         <h1 style={{ color: "lightgray" }}>BLOG SOBRE BATERIA</h1>
         <BodyContainer>
           <ContainerCards>
-            {posts.map((items) => {
-              return (
-                <buttom
-                  style={{ cursor: "pointer" }}
-                  onClick={() => goToProfile(items.id)}
-                >
-                  <Card>
-                    <img
-                      src={items.image}
-                      style={{ borderRadius: "15px" }}
-                      width="250"
-                      height="200"
-                    />
-                    <h2 style={{ fontSize: "27px", color: "#c3c6c7" }}>
-                      {items.title}
-                    </h2>
-                    <p
-                      style={{
-                        width: "80%",
-                        color: "#e1e4e6",
-                        textIndent: "18px",
-                        textAlign: "justify",
-                      }}
-                    >
-                      {items.description}
-                    </p>
+            <Card>
+              <img
+                src={post.image}
+                style={{ borderRadius: "15px" }}
+                width="350"
+                height="300"
+              />
+              <h2 style={{ fontSize: "27px", color: "#c3c6c7" }}>
+                {post.title}
+              </h2>
+              <p
+                style={{
+                  width: "80%",
+                  color: "#e1e4e6",
+                  textIndent: "18px",
+                  textAlign: "justify",
+                  fontSize: "19px",
+                }}
+              >
+                {post.text}
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "16px",
 
-                    {/* <p style={{ width: "80%", color: "#e6e7e8" }}>
+                  fontWeight: "bold",
+                }}
+              >
+                <span>Likes:</span>
+                <span
+                  style={{
+                    marginLeft: "7px",
+                  }}
+                >
+                  {post.likes}
+                </span>
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "16px",
+                  marginTop: "-4px",
+                  fontWeight: "bold",
+                }}
+              >
+                <span>Views:</span>
+                <span style={{ marginLeft: "7px", fontWeight: "bold" }}>
+                  {post.views}
+                </span>
+              </p>
+
+              {/* <p style={{ width: "80%", color: "#e6e7e8" }}>
                     {items.description}
-                    </p> */}
-                  </Card>
-                </buttom>
-              );
-            })}
+                  </p> */}
+            </Card>
           </ContainerCards>
         </BodyContainer>
       </ContainerGeral>
@@ -157,4 +173,4 @@ function App() {
   );
 }
 
-export default App;
+export default PostProfile;
