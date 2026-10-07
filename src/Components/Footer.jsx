@@ -6,7 +6,7 @@ function Footer() {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          height: "80px",
+          height: "60px",
           background: "#0000cc",
           alignItems: "center",
           justifyContent: "center",
@@ -14,7 +14,7 @@ function Footer() {
           color: "white",
         }}
       >
-        <span style={{ marginBottom: "10px" }}>Site feito por: </span>
+        <span style={{ marginBottom: "8px" }}>Site feito por: </span>
         <span> Gustavo Sohne</span>
       </div>
     </>
