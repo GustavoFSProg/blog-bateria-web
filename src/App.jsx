@@ -3,6 +3,7 @@ import styled from "styled-components";
 import api from "./api";
 import Header from "./Components/Header";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 const Card = styled.div`
   display: flex;
@@ -153,6 +154,7 @@ function App() {
           </ContainerCards>
         </BodyContainer>
       </ContainerGeral>
+      <Footer />
     </>
   );
 }
